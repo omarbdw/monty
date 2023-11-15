@@ -4,7 +4,12 @@
 /*Includes*/
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <fcntl.h>
 #include <string.h>
+#include <ctype.h>
+
 
 /* Structs */
 /**
@@ -37,13 +42,18 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+#define SUCCESS 1
+#define FAILURE 0
+#define UNUSED_PARAMETER __attribute__((unused))
+
 /**Variables*/
-char *delim = " \n\t";
+extern char *delim;
 
 
 
 /**Functions*/
 void pallFunc(stack_t **stackHead, unsigned int counter);
+int execute(char *lineContent, stack_t **stack, int counter, FILE *file);
 
 
 
