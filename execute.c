@@ -2,28 +2,38 @@
 
 int execute(char *lineContent, stack_t **stack, int counter, FILE *file)
 {
+
+    instruction_t opDict[] = {
+        {"pall", pallFunc}, {"push", pushFunc}, {NULL, NULL}};
+    char *delim = " \n\t";
     char *operation;
-    int i = 0;
-    instruction_t opDic[] = {
-        {"pall", pallFunc}};
+    unsigned int i = 0;
+    int check;
+
     operation = strtok(lineContent, delim);
-    while (operation)
+    if (operation && operation[0] == '#')
+        return (SUCCESS);
+    global.valueArg = strtok(NULL, delim);
+
+    while (opDict[i].opcode && operation)
     {
-        if (strcmp(opDic[i].opcode, operation) == 0)
+
+        check = strcmp(operation, opDict[i].opcode);
+        if (check == 0)
         {
-            opDic[i].f(stack, counter);
+            opDict[i].f(stack, counter);
             return (SUCCESS);
-            i++;
         }
+        i++;
     }
 
-    if (operation == NULL)
+    if (opDict[i].opcode && operation == NULL)
     {
         fprintf(stderr, "L%d: unknown instruction %s\n", counter, operation);
         fclose(file);
         free(lineContent);
         /* TODO: Free Stack */
-        exit(EXIT_FAILURE);
+        exit(FAILURE);
     }
 
     return (SUCCESS);

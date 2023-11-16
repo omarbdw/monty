@@ -1,6 +1,8 @@
 #ifndef __MONTY_H__
 #define __MONTY_H__
 
+#define  _GNU_SOURCE
+
 /*Includes*/
 #include <stdio.h>
 #include <stdlib.h>
@@ -42,18 +44,25 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-#define SUCCESS 1
-#define FAILURE 0
-#define UNUSED_PARAMETER __attribute__((unused))
+typedef struct global_s
+{
+    FILE *file;
+    char *lineContent;
+    char *valueArg;
+} global_t;
 
-/**Variables*/
-extern char *delim;
+extern global_t global;
+
+#define SUCCESS 0
+#define FAILURE 1
+#define UNUSED_PARAMETER __attribute__((unused))
 
 
 
 /**Functions*/
-void pallFunc(stack_t **stackHead, unsigned int counter);
+void pallFunc(stack_t **stackHead, __attribute__((unused)) unsigned int counter);
 int execute(char *lineContent, stack_t **stack, int counter, FILE *file);
+void pushFunc(stack_t **head, unsigned int counter);
 
 
 

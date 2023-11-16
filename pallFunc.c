@@ -1,20 +1,16 @@
 #include "monty.h"
-void pallFunc(stack_t **stackHead, unsigned int counter)
+void pallFunc(stack_t **stackHead, __attribute__((unused)) unsigned int counter)
 {
     stack_t *stack;
     stack = *stackHead;
-    (void)counter;
-    if (!stack)
+    if (stack == NULL)
     {
-        printf("Stack is empty");
+        return;
     }
-    else
+
+    while (stack)
     {
-        while (stack)
-        {
-            printf("%d\n", stack->n);
-            stack = stack->next;
-        }
-        
+        printf("%d\n", stack->n);
+        stack = stack->next;
     }
 }
