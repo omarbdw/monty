@@ -22,6 +22,18 @@ void divFunc(stack_t **stackHead, unsigned int counter)
         }
         exit(FAILURE);
     }
+    if (stack->n == 0)
+    {
+        fprintf(stderr, "L<%d>: can't div, division by zero", counter);
+        free(global.lineContent);
+        fclose(global.file);
+        while (stack)
+        {
+            free(stack);
+            stack = stack->next;
+        }
+        exit(FAILURE);
+    }
     stack = *stackHead;
     stack->next->n = (stack->next->n / stack->n);
     *stackHead = stack->next;
