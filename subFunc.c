@@ -1,10 +1,5 @@
 #include "monty.h"
-/**
- * addFunc - Adds the top two elements of the stack.
- * @stackHead: Double pointer to the head of the stack.
- * @counter: The line number currently being executed.
- */
-void addFunc(stack_t **stackHead, unsigned int counter)
+void subFunc(stack_t **stackHead, unsigned int counter)
 {
     stack_t *stack;
     int i = 0;
@@ -30,7 +25,7 @@ void addFunc(stack_t **stackHead, unsigned int counter)
         exit(FAILURE);
     }
     stack = *stackHead;
-     stack->next->n = (stack->n + stack->next->n);
+     stack->next->n = (stack->next->n - stack->n);
      *stackHead = stack->next;
      free(stack);
 }

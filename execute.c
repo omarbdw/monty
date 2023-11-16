@@ -6,7 +6,7 @@ int execute(char *lineContent, stack_t **stack, int counter, FILE *file)
         {"pall", pallFunc}, {"push", pushFunc},
         {"pint", pintFunc}, {"pop", popFunc}, 
         {"swap", swapFunc}, {"add", addFunc}, 
-        {"nop", nopFunc},
+        {"nop", nopFunc}, {"sub", subFunc},
         {NULL, NULL}};
     char *delim = " \n\t";
     char *operation;
