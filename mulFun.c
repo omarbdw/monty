@@ -27,7 +27,7 @@ while (stack)
 free(stack);
 stack = stack->next;
 }
-exit(FAILURE);
+exit(EXIT_FAILURE);
 }
 stack = *stackHead;
 stack->next->n = (stack->next->n * stack->n);
