@@ -2,23 +2,13 @@
 #include "monty.h"
 
 
-/**
- * The main function of the program.
- * 
- * @param argc The number of command-line arguments.
- * @param argv An array of strings containing the command-line arguments.
- * 
- * @return The exit status of the program.
- */
-
 global_t global = {NULL, NULL, NULL};
 
 int main(int argc, char *argv[])
 {
 	
 	FILE *file;
-	int lineRead = 1;
-	size_t readLine = 0;
+	int readLine = 1;
 	size_t lineSize = 0;
 	stack_t *stack = NULL;
 	int counter = 0;
@@ -37,7 +27,7 @@ int main(int argc, char *argv[])
 		exit(FAILURE);
 	}
 
-	while (lineRead > 0)
+	while (readLine > 0)
 	{
 		lineContent = NULL;
 		readLine = getline(&lineContent, &lineSize, file);

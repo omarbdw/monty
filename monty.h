@@ -63,6 +63,11 @@ extern global_t global;
 void pallFunc(stack_t **stackHead, __attribute__((unused)) unsigned int counter);
 int execute(char *lineContent, stack_t **stack, int counter, FILE *file);
 void pushFunc(stack_t **head, unsigned int counter);
+void pintFunc(stack_t **stackHead, unsigned int counter);
+void popFunc(stack_t **stackHead, unsigned int counter);
+void swapFunc(stack_t **stackHead, unsigned int counter);
+void addFunc(stack_t **stackHead, unsigned int counter);
+
 
 
 
