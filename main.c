@@ -5,7 +5,7 @@ global_t global = {NULL, NULL, NULL};
  * main - The main function of the program.
  * @argc: The number of command-line arguments.
  * @argv: An array of strings containing the command-line arguments.
- * return The exit status of the program.
+ * Return: The exit status of the program.
  */
 int main(int argc, char *argv[])
 {

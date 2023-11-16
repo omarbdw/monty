@@ -6,7 +6,6 @@
  */
 void pushFunc(stack_t **head, unsigned int counter)
 {
-stack_t *newNode;
 char *valueArg = global.valueArg;
 int j = 0, error = 0, value;
 if (valueArg)
@@ -37,18 +36,5 @@ free(global.lineContent);
 exit(FAILURE);
 }
 value = atoi(valueArg);
-newNode = malloc(sizeof(stack_t));
-if (newNode == NULL)
-{
-fprintf(stderr, "Error: malloc failed\n");
-exit(FAILURE);
-}
-newNode->n = value;
-newNode->prev = NULL;
-newNode->next = *head;
-if (*head != NULL)
-{
-(*head)->prev = newNode;
-}
-*head = newNode;
+addNode(head, value);
 }

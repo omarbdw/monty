@@ -60,6 +60,7 @@ char *valueArg;
 
 extern global_t global;
 
+
 #define SUCCESS 0
 #define FAILURE 1
 #define UNUSED_PARAMETER __attribute__((unused))
@@ -77,6 +78,9 @@ void swapFunc(stack_t **stackHead, unsigned int counter);
 void addFunc(stack_t **stackHead, unsigned int counter);
 void nopFunc(stack_t **stackHead, unsigned int counter);
 void subFunc(stack_t **stackHead, unsigned int counter);
+void addNode(stack_t **head, int value);
+void divFunc(stack_t **stackHead, unsigned int counter);
+
 
 
 

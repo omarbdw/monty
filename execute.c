@@ -17,6 +17,7 @@ instruction_t opDict[] = {
 {"pint", pintFunc}, {"pop", popFunc},
 {"swap", swapFunc}, {"add", addFunc},
 {"nop", nopFunc}, {"sub", subFunc},
+{"div", divFunc},
 {NULL, NULL}};
 char *delim = " \n\t";
 char *operation;

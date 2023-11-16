@@ -1,0 +1,10 @@
+1. Test with a valid file path as a command-line argument.
+2. Test with an invalid file path as a command-line argument.
+3. Test with an empty file.
+4. Test with a file containing only comments.
+5. Test with a file containing only whitespace.
+6. Test with a file containing valid Monty bytecode commands.
+7. Test with a file containing invalid Monty bytecode commands.
+8. Test with a file containing a mix of valid and invalid Monty bytecode commands.
+9. Test with a file containing a single valid Monty bytecode command.
+10. Test with a file containing multiple valid Monty bytecode commands.
