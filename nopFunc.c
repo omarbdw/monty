@@ -1,5 +1,5 @@
 #include "monty.h"
-void nopFunc(stack_t **stackHead, unsigned int counter)
+void nopFunc(__attribute__((unused)) stack_t **stackHead, __attribute__((unused)) unsigned int counter)
 {
     return;
 }

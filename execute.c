@@ -2,7 +2,6 @@
 
 int execute(char *lineContent, stack_t **stack, int counter, FILE *file)
 {
-
     instruction_t opDict[] = {
         {"pall", pallFunc}, {"push", pushFunc},
         {"pint", pintFunc}, {"pop", popFunc}, 
@@ -12,16 +11,12 @@ int execute(char *lineContent, stack_t **stack, int counter, FILE *file)
     char *delim = " \n\t";
     char *operation;
     unsigned int i = 0;
-
-
     operation = strtok(lineContent, delim);
     if (operation && operation[0] == '#')
         return (SUCCESS);
     global.valueArg = strtok(NULL, delim);
     while (opDict[i].opcode && operation)
     {
-
-
         if ((strcmp(operation, opDict[i].opcode)) == 0)
         {
             opDict[i].f(stack, counter);
