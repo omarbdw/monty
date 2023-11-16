@@ -1,7 +1,7 @@
 #ifndef __MONTY_H__
 #define __MONTY_H__
 
-#define  _GNU_SOURCE
+#define _GNU_SOURCE
 
 /*Includes*/
 #include <stdio.h>
@@ -25,9 +25,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+int n;
+struct stack_s *prev;
+struct stack_s *next;
 } stack_t;
 
 /**
@@ -40,15 +40,22 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+char *opcode;
+void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
+/**
+ * struct global_s - Global structure for Monty interpreter
+ * @file: file pointer to the script file
+ * @lineContent: pointer to the current line content being processed
+ * @valueArg: pointer to the argument value of the current line being processed
+ */
 typedef struct global_s
 {
-    FILE *file;
-    char *lineContent;
-    char *valueArg;
+FILE *file;
+char *lineContent;
+char *valueArg;
 } global_t;
 
 extern global_t global;
@@ -60,7 +67,8 @@ extern global_t global;
 
 
 /**Functions*/
-void pallFunc(stack_t **stackHead, __attribute__((unused)) unsigned int counter);
+void pallFunc(stack_t **stackHead, __attribute__((unused))\
+unsigned int counter);
 int execute(char *lineContent, stack_t **stack, int counter, FILE *file);
 void pushFunc(stack_t **head, unsigned int counter);
 void pintFunc(stack_t **stackHead, unsigned int counter);
