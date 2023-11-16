@@ -4,7 +4,11 @@ int execute(char *lineContent, stack_t **stack, int counter, FILE *file)
 {
 
     instruction_t opDict[] = {
-        {"pall", pallFunc}, {"push", pushFunc}, {"pint", pintFunc}, {"pop", popFunc},{"swap", swapFunc}, {"add", addFunc}, {NULL, NULL}};
+        {"pall", pallFunc}, {"push", pushFunc},
+        {"pint", pintFunc}, {"pop", popFunc}, 
+        {"swap", swapFunc}, {"add", addFunc}, 
+        {"nop", nopFunc},
+        {NULL, NULL}};
     char *delim = " \n\t";
     char *operation;
     unsigned int i = 0;

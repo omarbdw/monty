@@ -67,6 +67,7 @@ void pintFunc(stack_t **stackHead, unsigned int counter);
 void popFunc(stack_t **stackHead, unsigned int counter);
 void swapFunc(stack_t **stackHead, unsigned int counter);
 void addFunc(stack_t **stackHead, unsigned int counter);
+void nopFunc(stack_t **stackHead, unsigned int counter);
 
 
 
