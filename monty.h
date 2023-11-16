@@ -80,6 +80,7 @@ void nopFunc(stack_t **stackHead, unsigned int counter);
 void subFunc(stack_t **stackHead, unsigned int counter);
 void addNode(stack_t **head, int value);
 void divFunc(stack_t **stackHead, unsigned int counter);
+void mulFunc(stack_t **stackHead, unsigned int counter);
 
 
 
