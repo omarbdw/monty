@@ -23,7 +23,7 @@ if (i < 1)
 fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
 free(global.lineContent);
 fclose(global.file);
-free(stack);
+freeStack(stackHead);
 
 exit(FAILURE);
 }

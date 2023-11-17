@@ -39,11 +39,7 @@ if (operation && opDict[i].opcode == NULL)
 fprintf(stderr, "L%d: unknown instruction %s\n", counter, operation);
 fclose(file);
 free(lineContent);
-while (*stack)
-{
-*stack = (*stack)->next;
-free(*stack);
-}
+freeStack(stack);
 exit(FAILURE);
 }
 

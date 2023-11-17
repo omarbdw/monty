@@ -35,6 +35,7 @@ else
 fprintf(stderr, "L%d: usage: push integer\n", counter);
 fclose(global.file);
 free(global.lineContent);
+freeStack(head);
 exit(FAILURE);
 }
 value = atoi(valueArg);

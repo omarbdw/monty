@@ -22,11 +22,7 @@ if (i < 1)
 fprintf(stderr, "L<%d>: can't add, stack too short", counter);
 free(global.lineContent);
 fclose(global.file);
-while (stack)
-{
-free(stack);
-stack = stack->next;
-}
+freeStack(stackHead);
 exit(FAILURE);
 }
 stack = *stackHead;

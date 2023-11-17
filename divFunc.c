@@ -21,11 +21,7 @@ if (i < 1)
 fprintf(stderr, "L<%d>: can't div, stack too short", counter);
 free(global.lineContent);
 fclose(global.file);
-while (stack)
-{
-free(stack);
-stack = stack->next;
-}
+freeStack(stackHead);
 exit(FAILURE);
 }
 stack = *stackHead;
@@ -34,11 +30,7 @@ if (stack->n == 0)
 fprintf(stderr, "L<%d>: can't div, division by zero", counter);
 free(global.lineContent);
 fclose(global.file);
-while (stack)
-{
-free(stack);
-stack = stack->next;
-}
+freeStack(stackHead);
 exit(FAILURE);
 }
 stack = *stackHead;
