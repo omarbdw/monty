@@ -20,7 +20,7 @@ i++;
 
 if (i < 1)
 {
-fprintf(stderr, "L<%d>: can't swap, stack too short", counter);
+fprintf(stderr, "L%d: can't swap, stack too short", counter);
 free(global.lineContent);
 fclose(global.file);
 free(stack);
