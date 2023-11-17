@@ -12,6 +12,8 @@ if (valueArg)
 {
 for (j = 0; valueArg[j] != '\0'; j++)
 {
+if (valueArg[j] == '-' || valueArg[j] == '+')
+			j++;
 if (valueArg[j] > 57 || valueArg[j] < 48)
 error = 1;
 }
